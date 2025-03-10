@@ -29,7 +29,11 @@ const createProduct = async (req, res) => {
 const fetchProducts = async (req, res) => {
    try {
       const products = await Product.find();
-      res.json(products);
+      const optimizedProducts = products.map(product => ({
+         ...product._doc,
+         image: product.image.replace('/upload/', '/upload/w_600,h_750,c_fill,f_auto,q_auto/')
+     }));
+      res.json(optimizedProducts);
    } catch (error) {
       res.status(500).json({ error: error.message });
    }
