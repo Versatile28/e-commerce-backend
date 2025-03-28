@@ -8,6 +8,10 @@ const subcategorylistSchema = new mongoose.Schema({
    link: {
       type: String,
       required: true,
+   },
+   isNew: {
+      type: Boolean,
+      required: true,
    }
 });
 
