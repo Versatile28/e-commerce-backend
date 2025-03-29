@@ -30,7 +30,7 @@ const fetchMenu = async (req, res) => {
          image: menuItem.image
             ? menuItem.image.replace(
                  '/upload/',
-                 '/upload/w_600,h_750,c_fill,f_auto,q_auto/'
+                 '/upload/c_fit,f_auto,q_auto/'
               )
             : null,
          subcategories:
@@ -39,7 +39,7 @@ const fetchMenu = async (req, res) => {
                image: sub.image
                   ? sub.image.replace(
                        '/upload/',
-                       '/upload/w_500,h_750,c_fill,f_auto,q_auto/'
+                       '/upload/c_fit,f_auto,q_auto/'
                     )
                   : null,
             })) || [],
