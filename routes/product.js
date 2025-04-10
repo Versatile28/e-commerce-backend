@@ -9,6 +9,8 @@ const {
 
 const { createMenu, fetchMenu } = require('../controllers/menuController');
 
+const { getFilteredProducts } = require('../controllers/filterController');
+
 const router = express.Router();
 
 router.get('/products', fetchProducts);
@@ -22,5 +24,7 @@ router.post('/products', createProduct);
 router.post('/menu', createMenu);
 
 router.get('/menu', fetchMenu);
+
+router.get('/filter', getFilteredProducts);
 
 module.exports = router;
