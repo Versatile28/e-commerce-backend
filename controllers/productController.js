@@ -36,7 +36,7 @@ const fetchProducts = async (req, res) => {
       const products = await Product.find();
       const optimizedProducts = products.map(product => ({
          ...product._doc,
-         image: product.image.replace('/upload/', '/upload/w_450,h_750,c_fill,f_auto,q_auto/')
+         image: product.image.replace('/upload/', '/upload/w_600,h_750,c_fill,f_auto,q_auto/')
      }));
       res.json(optimizedProducts);
    } catch (error) {
